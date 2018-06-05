@@ -1,0 +1,10 @@
+version: "2"
+services:
+    swoole:
+        container_name: swoole
+        image: ccr.ccs.tencentyun.com/plugin/plugin-docker:0.0.1
+        volumes:
+            - /home/work/server/html/plugin:/home/work/server/html/plugin
+        ports:
+            - "8080:80"
+        command: php /home/work/server/html/plugin/bin/start_swoole_server.php start
