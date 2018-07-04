@@ -4,7 +4,7 @@ MAINTAINER gaowenfei
 
 ENV SRC_DIR /usr/local
 ENV PHP_VERSION 7.1.14
-ENV SWOOLE_VERSION 2.1.3
+ENV SWOOLE_VERSION 4.0.1
 ENV PHP_DIR /usr/local/php/${PHP_VERSION}
 ENV PHP_INI_DIR /etc/php/${PHP_VERSION}/cli
 ENV INIT_FILE ${PHP_INI_DIR}/conf.d
@@ -37,6 +37,8 @@ RUN yum -y install \
         bzip2-devel \
         libedit \
         libedit-devel \
+        glibc-headers \
+        gcc-c++ \
     && rm -rf /var/cache/{yum,ldconfig}/* \
     && rm -rf /etc/ld.so.cache \
     && yum clean all
